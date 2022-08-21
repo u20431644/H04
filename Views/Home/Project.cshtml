@@ -1,0 +1,33 @@
+﻿@model List<WebApplication2.Models.CurrentProject>
+@{
+    ViewBag.Title = "View";
+}
+
+<div class="mt-lg-1 bg-dark text-white rounded" style="padding:5px;">
+    <h1>Our Current Projects</h1>
+</div>
+
+@{ var query = Model.GroupBy(x => x.section); @*allows your code to group by using lambda functions*@
+foreach (var result in query)
+{
+    <h4><span style="font-weight:bold">@result.Key </span> <br /></h4>;
+    <hr style="color: greenyellow; height: 1px; width: 20vw; opacity: 50%"/>
+    foreach (var projects in result)
+    {
+        <a style="color:#212529; font-weight:bold" href="@projects.getURL().ToString()" target="_blank">@projects.getProjname()</a>
+        <br />
+        <p>
+            @projects.description <br />
+        </p>
+    }
+
+    <hr style="color:greenyellow; height:2px; opacity:40%" />
+
+}
+}
+
+<footer>
+    <p>As taken from: Sustainable Energy Africa - Home, 2022</p>
+</footer>
+
+

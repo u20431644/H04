@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+
+
+
+<div class="container-fluid">
+    <div class="mt-lg-1 bg-dark text-white rounded" style="padding:5px;">
+        <h1>Contact Us!</h1>
+    </div>
+
+    <div class="row" style="margin:10px">
+
+        <div class="card ;col-lg-3 " style="width: 20vw; padding-top: 0.5vh">
+            <h4>Query form:</h4>
+            <form action="" onsubmit="return" method="post">
+                <div class="mb-3">
+                    <label for="Name">Name</label>
+                    <input type="text" class="form-control" id="Name" placeholder="Enter your name" name="Name" />
+                </div>
+                <div class="mb-3">
+                    <label for="Surname">Surname</label>
+                    <input type="text" class="form-control" id="Surname" placeholder="Enter your Surname" name="Surname" />
+                </div>
+                <div class="mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" />
+                </div>
+                <div class="mb-3">
+                    <label for="Cellphone">Cellphone Number:</label>
+                    <input type="tel" class="form-control" id="Cellphone" placeholder="Enter Cellphone Number" name="Cellphone">
+                </div>
+
+                <!--<div class="form-check mb-3">-->
+                @*<label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                        </label>*@
+                <!--</div>-->
+                <label for="comment">Query:</label>
+                <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                <button onclick="writesuccessful()" type="submit" class="btn btn-primary" style="margin-top:1vh">Submit</button>
+            </form>
+        </div>
+
+        <div class="card ;col-lg-3 " style="width: 20vw;padding-top:0.5vh">
+            <h4>Contact information:</h4>
+            <p>
+                Email <a href="mailto:info@sustainable.org.za">info@sustainable.org.za</a><br />
+                The Green Building <br />
+                9B Bell Crescent Close <br />
+                Westlake Business Park <br />
+                Tokai <br />
+                Cape Town <br />
+                7945 <br />
+                South Africa <br />
+            </p>
+        </div>
+        <div class="col-lg-6; card" style="width: 55.5vw; padding-top:0.5vh; text-align:center; min-width:800px">
+            <h4>Map showing our location:</h4>
+            <div class="mapouter" style="display:block; margin:auto">
+                <div class="gmap_canvas">
+                    <iframe width="800" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=9B%20Bell%20Crescent%20Close%20Westlake%20Business%20Park&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
+                    <style>
+                        .mapouter {
+                            text-align: center;
+                            position: center;
+                            text-align: right;
+                            height: 400px;
+                            width: 800px;
+                        }
+                    </style>
+                    <style>
+                        .gmap_canvas {
+                            text-align: center;
+                            overflow: hidden;
+                            background: none !important;
+                            height: 400px;
+                            width: 800px;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function writesuccessful() {
+        //var inputval = document.getElementById("Name").innerText;
+        //localStorage.setItem("Name", document.getElementById("Name", inputval))
+        callalert();
+    }
+
+    function callalert() {
+        window.alert("Query submitted successfully!")
+    }
+</script>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+@using System.Web.Optimization;
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Bundle/sass")
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="~/Content/site.css" />
+    @Scripts.Render("~/bundles/jquery")
+    <script src="@Url.Content("~/Scripts/Javascript.js")"></script>
+    @RenderSection("Scripts", false/*required*/)
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a href="@Url.Action("Index","Home")" class="navbar-brand " style="margin-left:10px"><img src="https://www.sustainable.org.za/images/Logo.png" style="width:100px; background-color:aliceblue" class="ratio-21x9" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav nav">
+                    <li class="nav-link linkpad">
+                        <a href="@Url.Action("Index","Home")" class="link-light text-decoration-none linkpad">Home</a>
+                    </li>
+                    <li class="nav-link linkpad">
+                        <a href="@Url.Action("About","Home")" class="link-light text-decoration-none linkpad">About Us</a>@*View name, controller name*@
+                    </li>
+                    <li class="nav-link linkpad">
+                        <a href="@Url.Action("Contact","Home")" class="link-light text-decoration-none linkpad">Contact Us</a>
+                    </li>
+                    <li class="nav-item dropdown link-light">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f9fafb; padding:25px 10px">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="@Url.Action("Project","Home")">Current Projects</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("CompletedProject","Home")">Completed Projects</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("FutureProject","Home")">Future Projects</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-lg body-content">
+        @RenderBody()
+        @*<hr />*@
+    </div>
+    <div class="footer fixed-bottom">
+        <p>&copy; @DateTime.Now.Year - SEA Application</p>
+    </div>
+
+    @* @Scripts.Render("~/bundles/jquery")*@
+    @*@Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
+</body>
+</html>

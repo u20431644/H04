@@ -1,0 +1,85 @@
+﻿@model List<WebApplication2.Models.BlogEntry>
+@{ ViewBag.Title = "About";
+}
+                @*<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>*@
+                @*<p>Use this area to provide additional information.</p>*@
+
+<!-- THE CHALLENGE: -->
+<!-- 1. recreate version 3 (https://codepen.io/cjl750/pen/mXbMyo) with no javascript whatsoever
+     2. make code as abstract as possible (e.g., trying to calc positions that would work with any number of dots instead of hard-coding the container width as we do in our media queries)
+     3. highest browser support possible -->
+<!-- Bonus points: turn v3's pseudo content into actual element content, so it's accessible to screen readers, search engines, etc. -->
+
+
+<h1>Notable events at Sustainable Energy Africa</h1>
+<div class="flex-parent">
+    <div class="input-flex-container">
+        <input type="radio" name="timeline-dot" data-description="1993" checked>
+        <div class="dot-info" data-description="1993">
+            <span class="year">1993</span>
+            <span class="label">Early years</span>
+        </div>
+        <input type="radio" name="timeline-dot" data-description="2000">
+        <div class="dot-info" data-description="2000">
+            <span class="year">2000</span>
+            <span class="label">SEA Formed</span>
+        </div>
+        <input type="radio" name="timeline-dot" data-description="2008" >
+        <div class="dot-info" data-description="2008">
+            <span class="year">2008</span>
+            <span class="label">Building Capacity</span>
+        </div>
+        <input type="radio" name="timeline-dot" data-description="2009">
+        <div class="dot-info" data-description="2009">
+            <span class="year">2009</span>
+            <span class="label">Urban Energy development</span>
+        </div>
+        <input type="radio" name="timeline-dot" data-description="2013">
+        <div class="dot-info" data-description="2013">
+            <span class="year">2013</span>
+            <span class="label">Energy poverty</span>
+        </div>
+        <input type="radio" name="timeline-dot" data-description="2016">
+        <div class="dot-info" data-description="2016">
+            <span class="year">2016</span>
+            <span class="label">Extended Development</span>
+        </div>
+        <input type="radio" name="timeline-dot" data-description="Present">
+        <div class="dot-info" data-description="Present">
+            <span class="year">Present</span>
+            <span class="label">Extension into Africa</span>
+        </div>
+        <input type="radio" name="timeline-dot" data-description="Future">
+        <div class="dot-info" data-description="Future">
+            <span class="year">Future</span>
+            <span class="label">Continued expansion</span>
+        </div>
+
+            <div id="timeline-descriptions-wrapper">
+                <p data-description="1993"> <span style="font-weight: bold"> @Model[0].blogHeadings</span> <br />@Model[0].blogDescriptions </p>
+                <p data-description="2000"> <span style="font-weight: bold">@Model[1].blogHeadings</span><br />@Model[1].blogDescriptions </p>
+                <p data-description="2008"><span style="font-weight: bold">@Model[2].blogHeadings</span><br />@Model[2].blogDescriptions </p>
+                <p data-description="2009"><span style="font-weight: bold">@Model[3].blogHeadings</span><br />@Model[3].blogDescriptions </p>
+                <p data-description="2013"><span style="font-weight: bold">@Model[4].blogHeadings</span><br />@Model[4].blogDescriptions </p>
+                <p data-description="2016"><span style="font-weight: bold">@Model[5].blogHeadings</span><br />@Model[5].blogDescriptions </p>
+                <p data-description="Present"><span style="font-weight: bold">@Model[6].blogHeadings</span><br />@Model[6].blogDescriptions </p>
+                <p data-description="Future"><span style="font-weight: bold">@Model[7].blogHeadings</span><br />@Model[7].blogDescriptions </p>
+                <hr style="color:greenyellow; height:2px"/>
+            </div>
+        
+        <div class="flex" style="margin-left:-4vw; width:100%">
+            <div >
+                Sustainable Energy Africa promotes the development of an equitable low carbon, clean energy economy throughout Southern Africa.
+                Through our work we promote the more efficient use of conventional energy, the transition to more sustainable energies such as
+                solar and wind power, access to safe and affordable energy for all, and a holistic view of sustainable development.
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>As taken from: Sustainable Energy Africa - Home, 2022</p>
+</footer>
